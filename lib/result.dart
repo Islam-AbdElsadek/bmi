@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
-   Result({super.key, required this.result});
+  Result({super.key, required this.result});
 
   String? text1;
   Color? text_color;
