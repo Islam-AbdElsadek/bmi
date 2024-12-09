@@ -12,6 +12,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double height = 170;
   int weight = 70;
   int age = 20;
+  double result = 0;
   String gender = "";
   Color? color_m = Color(0xff3a5a40);
   Color? color_f = Color(0xff3a5a40);
@@ -199,6 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               FloatingActionButton(
+                                shape: CircleBorder(),
                                 backgroundColor: Color(0xffa3b18a),
                                 onPressed: () {
                                   setState(() {
@@ -211,6 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ),
                               FloatingActionButton(
+                                shape: CircleBorder(),
                                 backgroundColor: Color(0xffa3b18a),
                                 onPressed: () {
                                   setState(() {
@@ -260,6 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               FloatingActionButton(
+                                shape: CircleBorder(),
                                 backgroundColor: Color(0xffa3b18a),
                                 onPressed: () {
                                   setState(() {
@@ -272,6 +276,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ),
                               FloatingActionButton(
+                                shape: CircleBorder(),
                                 backgroundColor: Color(0xffa3b18a),
                                 onPressed: () {
                                   setState(() {
@@ -295,17 +300,21 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
           Expanded(
-            child: GestureDetector(
-              onTap: () =>
+            child: InkWell(
+              onTap: () {
 
+                result = weight / ((height / 100) * (height / 100));
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Result(),
+                    builder: (context) =>  Result(result: result),
                   ),
-                ),
+                );
+                setState(() {
+                  
+                });
 
-
+              },
               child: Container(
                 color: Color(0xffdad7cd),
                 width: double.infinity,
